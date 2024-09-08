@@ -10,7 +10,7 @@ interface ProductDetailsProps {
 
 export default function ProductDetails({item}: ProductDetailsProps) {
 
-    const MAX_ITEMS = 5;
+    const MAX_ITEMS = 50;
 
     const increaseQuantity = useStore((state) => state.increaseQuantity)
     const decreaseQuantity = useStore((state) => state.decreaseQuantity)
@@ -34,7 +34,7 @@ export default function ProductDetails({item}: ProductDetailsProps) {
                         <XCircleIcon className="text-red-600 h-8 w-8"/>
                     </button>
                 </div>
-                <p className="text-2xl text-amber-500 font-black">
+                <p className="font-bold text-gray-600">
                     {formatCurrency(item.price)}
                 </p>
                 <div className="flex gap-5 px-10 py-2 bg-gray-100 w-fit rounded-lg">

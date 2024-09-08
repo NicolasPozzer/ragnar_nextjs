@@ -25,7 +25,7 @@ export default function ProductCard({product}: ProductCardProps) {
 
         <div className='p-5'>
             <h3 className='text-1xl font-bold'>{product.name}</h3>
-            <p className='mt-5 font-bold text-2xl text-amber-500'>
+            <p className='mt-5 text-1xl'>
                 {formatCurrency( product.price )}
             </p>
             

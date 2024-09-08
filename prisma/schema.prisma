@@ -33,6 +33,7 @@ model Product {
 model Order {
   id            Int             @id @default(autoincrement()) // -> Con Este
   name          String
+  telefono      String
   total         Float
   date          DateTime        @default(now())
   status        Boolean         @default(false)

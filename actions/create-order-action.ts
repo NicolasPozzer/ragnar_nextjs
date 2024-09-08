@@ -21,6 +21,7 @@ export async function  createOrder(data: unknown){
         await prisma.order.create({
             data: {
                 name: result.data.name,
+                telefono: result.data.telefono,
                 total: result.data.total,
                 orderProducts: {
                     create: result.data.order.map(product => ({

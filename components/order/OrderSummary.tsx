@@ -21,6 +21,7 @@ export default function OrderSummary() {
   const handleCreateOrder = async (formData: FormData) => {
     const data = {
       name: formData.get('name'),
+      telefono: formData.get('telefono'),
       total,
       order
 
@@ -47,7 +48,8 @@ export default function OrderSummary() {
 
 
     //Mostrar que funciono
-    toast.success('Pedido Realizado Correctamente')
+    toast.success('Gracias!, ' +
+        'Nos pondremos en contacto contigo via WhatsApp!')
     clearOrder();
   }
 
@@ -77,16 +79,24 @@ export default function OrderSummary() {
                 </p>
 
                 <form
-                  className='w-full mt-10 space-y-5'
-                  action={handleCreateOrder}
+                    className='w-full mt-10 space-y-5'
+                    action={handleCreateOrder}
                 >
 
                   <input
                       type='text'
-                      placeholder="Tu Nombre"
+                      placeholder="Tu Nombre y apellido"
                       className="bg-white border border-gray-100 p-2 w-full"
                       name="name"
                   />
+
+                  <input
+                      type='text'
+                      placeholder="Numero de Telefono(WhatsApp)"
+                      className="bg-white border border-gray-100 p-2 w-full"
+                      name="telefono"
+                  />
+
 
                   <input
                       type='submit'
@@ -98,8 +108,8 @@ export default function OrderSummary() {
 
               </div>
         )
-          
-      }
+
+        }
     </aside>
   )
 }

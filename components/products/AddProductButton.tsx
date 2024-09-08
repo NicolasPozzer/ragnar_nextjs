@@ -14,8 +14,8 @@ export default function AddProductButton({product}: AddProductButtonProps) {
   return (
             <button
                 type='button'
-                className='bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-5 p-3
-                uppercase font-bold cursor-pointer'
+                className='bg-white hover:bg-black hover:text-white text-black w-full mt-4 p-2
+                uppercase cursor-pointer border-y-black border-x-black border-2 rounded-3xl'
                 onClick={() => addToOrder(product)}
             >
                 añadir
