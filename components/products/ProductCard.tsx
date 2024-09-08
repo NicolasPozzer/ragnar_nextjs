@@ -1,38 +1,24 @@
-import {formatCurrency, getImagePath} from '@/src/utils'
-import { Product } from '@prisma/client'
-import React from 'react'
-import Image from 'next/image'
-import { useStore } from '@/src/store'
-import AddProductButton from './AddProductButton'
+import { formatCurrency, getImagePath } from '@/src/utils';
+import { Product } from '@prisma/client';
+import React from 'react';
+import Image from 'next/image';
+import ClientProductModal from './ClientProductModal'; // Client component
 
 interface ProductCardProps {
-    product: Product
+    product: Product;
 }
 
-export default function ProductCard({product}: ProductCardProps) {
+export default function ProductCard({ product }: ProductCardProps) {
+    const imagePath = getImagePath(product.image);
 
-    const imagePath = getImagePath(product.image)
-
-  return (
-    <div className='border bg-white'>
-        <Image
-            width={400}
-            height={400}
-            src={imagePath}
-            alt={`Imagen: ${product.name}`}
-            quality={40}//si queremos agregar la calidad
-        />
-
-        <div className='p-5'>
-            <h3 className='text-1xl font-bold'>{product.name}</h3>
-            <p className='mt-5 text-1xl'>
-                {formatCurrency( product.price )}
-            </p>
-            
-            <AddProductButton
-                product={product}
-            />
+    return (
+        <div className='border bg-white'>
+            {/* Pasa la información del producto al client component */}
+            <ClientProductModal product={product} />
+            <div className='p-5'>
+                <h3 className='text-1xl font-bold'>{product.name}</h3>
+                <p className='mt-5 text-1xl'>{formatCurrency(product.price)}</p>
+            </div>
         </div>
-    </div>
-  )
+    );
 }

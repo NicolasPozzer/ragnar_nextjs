@@ -38,6 +38,7 @@ export default function ProductDetails({item}: ProductDetailsProps) {
                     {formatCurrency(item.price)}
                 </p>
                 <div className="flex gap-5 px-10 py-2 bg-gray-100 w-fit rounded-lg">
+                    Cantidad:
                     <button
                         type="button"
                         onClick={() => decreaseQuantity(item.id)}

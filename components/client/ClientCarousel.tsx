@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function ClientCarousel() {
-    const images = ["/carrousel/image1.jpeg", "/carrousel/image2.jpeg", "/carrousel/image3.jpeg"];
+    const images = ["/carrousel/image1.svg", "/carrousel/image2.svg", "/carrousel/image3.svg"];
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {

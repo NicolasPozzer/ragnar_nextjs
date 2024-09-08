@@ -5,12 +5,12 @@ import { z } from 'zod'
 
 export const OrderSchema = z.object({
     name: z.string()
-        .min(1, 'Tu Nombre es Obligatorio'),
+        .min(1, 'Tu Nombre es Obligatorio.'),
     telefono: z.string()
-        .min(1, 'Tu Telefono es Obligatorio')
-        .regex(/^\d+$/, 'El teléfono debe contener solo números'),
+        .min(1, 'Tu Telefono es Obligatorio.')
+        .regex(/^\d+$/, 'El teléfono debe contener solo números sin espacios.'),
     total: z.number()
-        .min(1, "Hay errores en la orden"),//si se le pasa 0 en vez de 1, es decir que no hay ningun
+        .min(1, "Hay errores en la orden!"),//si se le pasa 0 en vez de 1, es decir que no hay ningun
     //producto en la listapero como es una lista de carrito siempre tiene q haber uno al cliquear
 
     order: z.array(z.object({
