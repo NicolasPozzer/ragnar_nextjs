@@ -3,6 +3,7 @@ import useSWR from 'swr'
 import Heading from "@/components/ui/Heading";
 import OrderCard from "@/components/order/OrderCard";
 import {OrderWithProducts} from "@/src/types";
+import ProtectedPage from "@/components/ProtectedPage";
 
 
 export default function Page() {
@@ -17,7 +18,7 @@ export default function Page() {
 
 
     if(data) return (
-        <>
+        <ProtectedPage>
             <Heading>Administrar Ordenes</Heading>
 
             {data.length ? (
@@ -32,6 +33,6 @@ export default function Page() {
             ) : <p className='text-center'>
                 No hay ordenes Pendientes!
             </p>}
-        </>
+        </ProtectedPage>
     )
 }

@@ -5,6 +5,7 @@ import EditProductForm from "@/components/products/EditProductForm";
 import ProductForm from "@/components/products/ProductForm";
 import React from "react";
 import GoBackButton from "@/components/ui/GoBackButton";
+import ProtectedPage from "@/components/ProtectedPage";
 
 
 async function getProductsById(id: number) {
@@ -25,7 +26,7 @@ export default async function EditProductsPage({params}: {params: {id: string}})
     const product = await getProductsById(+params.id)
 
     return (
-        <>
+        <ProtectedPage>
             <Heading>Editar Producto: {product.name}</Heading>
 
                 <GoBackButton/>
@@ -35,6 +36,6 @@ export default async function EditProductsPage({params}: {params: {id: string}})
                         product={product}
                     />
                 </EditProductForm>
-            </>
+        </ProtectedPage>
             )
             }
