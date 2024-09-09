@@ -8,7 +8,7 @@ export default function PinPage() {
     const [error, setError] = useState('');
     const router = useRouter();
 
-    const correctPin = '1234'; // Aquí defines el PIN correcto
+    const correctPin = '1973'; // Aquí defines el PIN correcto
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
