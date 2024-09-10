@@ -9,7 +9,7 @@ export default function PinPage() {
     const [error, setError] = useState('');
     const router = useRouter();
 
-    const correctPin = process.env.PIN; // Aquí defines el PIN correcto
+    const correctPin = process.env.NEXT_PUBLIC_PIN; // Aquí defines el PIN correcto
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
