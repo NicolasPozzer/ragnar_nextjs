@@ -3,12 +3,13 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+
 export default function PinPage() {
     const [pin, setPin] = useState('');
     const [error, setError] = useState('');
     const router = useRouter();
 
-    const correctPin = '1973'; // Aquí defines el PIN correcto
+    const correctPin = process.env.PIN; // Aquí defines el PIN correcto
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();

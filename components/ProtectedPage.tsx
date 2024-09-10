@@ -9,7 +9,7 @@ const ProtectedPage: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
     useEffect(() => {
         const pin = localStorage.getItem('adminPin');
-        if (pin !== '1973') { // Cambia '1234' por el PIN que deseas usar
+        if (pin !== process.env.PIN) { // Cambia '1234' por el PIN que deseas usar
             router.push('/admin/pin'); // Redirige a la página de PIN
         } else {
             setIsAuthorized(true); // Establece el estado si el PIN es correcto
