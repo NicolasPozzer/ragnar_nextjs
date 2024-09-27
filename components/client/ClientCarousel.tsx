@@ -18,7 +18,19 @@ export default function ClientCarousel() {
     return (
         <div className="w-full h-64 overflow-hidden relative mt-20">
             {images.map((image, index) => (
+                /*
                 <Image
+                    key={index}
+                    src={image}
+                    width={10000}
+                    height={64}
+                    alt={`Imagen ${index + 1}`}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                        index === currentIndex ? "opacity-100" : "opacity-0"
+                    }`}
+                />
+                */
+                <img
                     key={index}
                     src={image}
                     width={10000}
